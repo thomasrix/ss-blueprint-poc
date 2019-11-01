@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1114.81 367.76">
+  <defs>
+    <style>
+      .a, .b {
+        fill: none;
+        stroke: #fffdf7;
+        stroke-miterlimit: 10;
+        stroke-width: 7px;
+      }
+
+      .b {
+        stroke-linecap: square;
+      }
+    </style>
+  </defs>
+  <title>deckplan</title>
+  <path class="a" d="M1012.85,518.07c-156.25,59.17-459.09,49.62-609.54,36.27S129.4,500.9,129.4,500.9V267.78s123.45-40.51,273.91-54,453.29-23.15,609.54,36.65c185.17,71.37,223.75,135,223.75,135S1198,447.46,1012.85,518.07Z" transform="translate(-125.9 -200.12)"/>
+  <g>
+    <path class="b" d="M214.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M214.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="88.6" y1="322.38" x2="88.6" y2="274.38"/>
+    <line class="b" x1="88.6" y1="46.38" x2="88.6" y2="95.38"/>
+    <path class="b" d="M291.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M291.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="165.6" y1="338.38" x2="165.6" y2="274.38"/>
+    <line class="b" x1="165.6" y1="30.38" x2="165.6" y2="95.38"/>
+    <line class="b" x1="244.6" y1="17.38" x2="244.6" y2="95.38"/>
+    <path class="b" d="M370.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M370.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="244.6" y1="349.38" x2="244.6" y2="274.38"/>
+    <line class="b" x1="347.6" y1="358.38" x2="347.6" y2="274.38"/>
+    <line class="b" x1="347.6" y1="9.38" x2="347.6" y2="95.38"/>
+    <path class="b" d="M473.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M473.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M568.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M568.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="442.6" y1="362.38" x2="442.6" y2="274.38"/>
+    <line class="b" x1="442.6" y1="5.38" x2="442.6" y2="95.38"/>
+    <line class="b" x1="540.6" y1="8.38" x2="540.6" y2="95.38"/>
+    <path class="b" d="M666.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M666.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="540.6" y1="362.38" x2="540.6" y2="274.38"/>
+    <line class="b" x1="637.6" y1="8.38" x2="637.6" y2="95.38"/>
+    <line class="b" x1="637.6" y1="360.38" x2="637.6" y2="274.38"/>
+    <path class="b" d="M763.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M763.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="730.6" y1="351.38" x2="730.6" y2="274.38"/>
+    <path class="b" d="M856.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M856.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="730.6" y1="16.38" x2="730.6" y2="95.38"/>
+    <path class="b" d="M950.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M950.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="824.6" y1="335.38" x2="824.6" y2="274.38"/>
+    <line class="b" x1="824.6" y1="33.38" x2="824.6" y2="95.38"/>
+    <path class="b" d="M1034.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M1034.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="908.6" y1="60.38" x2="908.6" y2="95.38"/>
+    <line class="b" x1="908.6" y1="308.38" x2="908.6" y2="274.38"/>
+    <path class="b" d="M129.5,355.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M214.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="165.6" y1="95.38" x2="88.6" y2="95.38"/>
+    <path class="b" d="M568.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M666.5,295.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="824.6" y1="95.38" x2="730.6" y2="95.38"/>
+    <line class="b" x1="908.6" y1="95.38" x2="824.6" y2="95.38"/>
+    <line class="b" x1="442.6" y1="95.38" x2="347.6" y2="95.38"/>
+    <line class="b" x1="347.6" y1="95.38" x2="244.6" y2="95.38"/>
+    <line class="b" x1="637.6" y1="95.38" x2="442.6" y2="95.38"/>
+    <line class="b" x1="244.6" y1="95.38" x2="165.6" y2="95.38"/>
+    <line class="b" x1="730.6" y1="95.38" x2="637.6" y2="95.38"/>
+    <line class="b" x1="442.6" y1="274.38" x2="637.6" y2="274.38"/>
+    <line class="b" x1="347.6" y1="274.38" x2="442.6" y2="274.38"/>
+    <path class="b" d="M568.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="730.6" y1="274.38" x2="824.6" y2="274.38"/>
+    <line class="b" x1="88.6" y1="274.38" x2="165.6" y2="274.38"/>
+    <line class="b" x1="165.6" y1="274.38" x2="244.6" y2="274.38"/>
+    <path class="b" d="M214.5,474.5" transform="translate(-125.9 -200.12)"/>
+    <path class="b" d="M129.5,404.5" transform="translate(-125.9 -200.12)"/>
+    <line class="b" x1="824.6" y1="274.38" x2="908.6" y2="274.38"/>
+    <line class="b" x1="244.6" y1="274.38" x2="347.6" y2="274.38"/>
+    <line class="b" x1="637.6" y1="274.38" x2="730.6" y2="274.38"/>
+  </g>
+</svg>

@@ -1,5 +1,5 @@
-# parceljs-boilerplate
-### Project boilerplate for small and midsize projects.
+# SS Blueprint Proof of Concept
+### Just a test.
 
 Bundles with Parceljs both for development and deploy.
 Javascript (ES6) and css (SASS) bundled separately.
