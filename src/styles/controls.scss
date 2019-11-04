@@ -1,0 +1,30 @@
+[blueprint-scroller]{
+    .controls{
+        width:50%;
+        margin: 1em auto;
+        display: flex;
+        justify-content: center;
+        .button{
+            margin:5px;
+            font-family: gibsonSemibold;
+            text-align: center;
+            box-sizing: border-box;
+            font-size: 1.5em;
+            line-height: 1.1em;
+            width:1em;
+            height:1em;
+            background: rgb(187, 187, 187);
+            color:#4d4d4d;
+            cursor: pointer;
+        }
+        .forward{
+            transform: rotate(-90deg);
+        }
+        .back{
+            transform: rotate(90deg);
+        }
+        .left{
+            transform: rotate(180deg);
+        }
+    }
+}

@@ -1,7 +1,8 @@
 'use strict';
-import {create, select} from '../utils/trix';
+import {create, select, normalize} from '../utils/trix';
 import '../../styles/blueprint.scss';
 import { StreamDrawUsage } from 'three';
+import Controls from './controls';
 global.THREE = require('three');
 require('three/examples/js/controls/OrbitControls');
 
@@ -16,7 +17,7 @@ export default class Blueprint {
                     width:800,
                     height:450,
                     xRange:7.5,
-                    zoom:20
+                    zoom:18
                 },
                 vertical:{
                     xCount:5,
@@ -33,8 +34,8 @@ export default class Blueprint {
         // this.build();
     }
     init(props){
-        let container = select('[blueprint-scroller]');
-        this.canvas = create('canvas', container, 'faq-ct-canvas');
+        this.container = select('[blueprint-scroller]');
+        this.canvas = create('canvas', this.container, 'faq-ct-canvas');
         props.context = this.canvas.getContext('webgl');
         
         this.query = window.matchMedia("(max-width: 500px)");
@@ -82,12 +83,14 @@ export default class Blueprint {
         // Setup a camera
         // const camera = new THREE.OrthographicCamera();
         this.camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
+        this.camera.near = 15;
         this.camera.position.z = zoom;
-        this.camera.position.y = -5;
+        // this.camera.position.y = -6;
         this.camera.lookAt(new THREE.Vector3(0, 0, 0));
-        this.camera.near = 5;
 
         console.log(this.camera.position);
+
+        this.controls = new Controls(this.container, this.camera);
         // Setup camera controller
         
         // const controls = new THREE.OrbitControls(this.camera, this.canvas);
@@ -146,18 +149,24 @@ export default class Blueprint {
         const deckOne = new THREE.Mesh(plane, material);
         const deckTwo = new THREE.Mesh(plane, materialTwo);
         const deckThree = new THREE.Mesh(plane, materialThree);
-        console.log(deckTwo.position);
+        // console.log(deckTwo.position);
         deckOne.position.set(0, 0, -3)
         deckThree.position.set(0, 0, 3)
         
-        // this.group = new THREE.Group();
+        this.group = new THREE.Group();
         
-        scene.add(deckOne);
-        scene.add(deckTwo);
-        scene.add(deckThree);
+        this.group.add(deckOne);
+        this.group.add(deckTwo);
+        this.group.add(deckThree);
+
+        this.decks = [deckOne, deckTwo, deckThree];
+
+        this.group.rotateX(-0.2);
+
+        scene.add(this.group);
 
         const near = 5;
-        const far = 19;
+        const far = 18;
         const color = '#1F2939';
         scene.fog = new THREE.Fog(color, near, far);
 
@@ -173,6 +182,15 @@ export default class Blueprint {
             // controls.update();
             // console.log('render')
             // this.renderer.clear();
+            // console.log(this.camera.position.distanceTo(this.decks[2].position))
+            this.decks.forEach((item)=>{
+                const dist = this.camera.position.distanceTo(item.position)
+                if(dist > 12) item.material.opacity = 1;
+                else if(dist < 9) item.material.opacity = 0;
+                else if(dist < 12 && dist > 9){
+                    item.material.opacity = normalize(dist, 9, 12);
+                }
+            })
             this.renderer.render(scene, this.camera);
             requestAnimationFrame(render);
         }
