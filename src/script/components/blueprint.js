@@ -79,11 +79,12 @@ export default class Blueprint {
         this.renderer.gammaOutput = true;
         this.renderer.setClearColor('hsl(20, 10%, 20%)', 0);
         this.renderer.setSize(width, height);
+        // this.renderer.shadowMapEnabled = true;
         
         // Setup a camera
         // const camera = new THREE.OrthographicCamera();
         this.camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
-        this.camera.near = 15;
+        // this.camera.near = 15;
         this.camera.position.z = zoom;
         // this.camera.position.y = -6;
         this.camera.lookAt(new THREE.Vector3(0, 0, 0));
@@ -105,11 +106,11 @@ export default class Blueprint {
         const scene = new THREE.Scene();
         // scene.background = new THREE.Color('#1F2939');
         
-        scene.add(new THREE.AmbientLight('hsl(0, 0%, 90%)'));
+        // scene.add(new THREE.AmbientLight('hsl(0, 0%, 90%)'));
         let d_light = new THREE.PointLight( 0xffffff, 1, 0, 2);
         
         // d_light.castShadow = true;
-        d_light.position.set( 10, 15, 7 );
+        d_light.position.set( 2, 2, 20 );
         
         scene.add(d_light);
         // console.log('adding light', d_light);
@@ -118,8 +119,8 @@ export default class Blueprint {
         const textureTwo = new THREE.TextureLoader().load( process.env.ASSETS_PATH + 'images/deckplan2.png' );
         const textureThree = new THREE.TextureLoader().load( process.env.ASSETS_PATH + 'images/deckplan3.png' );
         // set the "color space" of the texture
-
-
+        
+        
         textureOne.encoding = THREE.sRGBEncoding;
         textureTwo.encoding = THREE.sRGBEncoding;
         textureThree.encoding = THREE.sRGBEncoding;
@@ -132,39 +133,66 @@ export default class Blueprint {
         const material = new THREE.MeshStandardMaterial({
             map:textureOne,
             transparent:true
-        }
-        );
+        });
         const materialTwo = new THREE.MeshStandardMaterial({
             map:textureTwo,
             transparent:true,
-        })
+        });
         const materialThree = new THREE.MeshStandardMaterial({
             map:textureThree,
             transparent:true,
-        })
-
+        });
         
-        let plane = new THREE.PlaneGeometry( 22, 7, 2, 2 );
+        
+        const plane = new THREE.PlaneGeometry( 22, 7, 2, 2 );
         
         const deckOne = new THREE.Mesh(plane, material);
         const deckTwo = new THREE.Mesh(plane, materialTwo);
         const deckThree = new THREE.Mesh(plane, materialThree);
         // console.log(deckTwo.position);
-        deckOne.position.set(0, 0, -3)
-        deckThree.position.set(0, 0, 3)
+        deckOne.position.set(0, 0, -3);
+        deckThree.position.set(0, 0, 3);
+
+        // deckOne.castShadow = true;
+        
         
         this.group = new THREE.Group();
         
         this.group.add(deckOne);
         this.group.add(deckTwo);
         this.group.add(deckThree);
-
+        
         this.decks = [deckOne, deckTwo, deckThree];
-
+        
         this.group.rotateX(-0.2);
-
+        
         scene.add(this.group);
-
+        
+        const dustPlane = new THREE.PlaneGeometry(30, 30, 2, 2);
+        const dustTexture = new THREE.TextureLoader().load( process.env.ASSETS_PATH + 'images/noise-1.png' );
+        dustTexture.anisotropy = this.renderer.getMaxAnisotropy();
+        dustTexture.encoding = THREE.sRGBEncoding;
+        const dustMaterial = new THREE.MeshStandardMaterial({
+            map:dustTexture,
+            // color:'#cccccc',
+            transparent:true,
+            opacity:0.4,
+            fog:false
+        });
+        const dustOne = new THREE.Mesh(dustPlane, dustMaterial);
+        dustOne.position.set(0, 0, -6);
+        // dustOne.receiveShadow = true;
+        // const dustTwo = new THREE.Mesh(dustPlane, dustMaterial);
+        // dustTwo.position.set(0, 0, 2);
+        // dustTwo.rotateZ(0.5);
+        // const dustThree = new THREE.Mesh(dustPlane, dustMaterial);
+        // dustThree.position.set(0, 0, -1);
+        // dustThree.rotateZ(1.5);
+        
+        scene.add(dustOne);
+        // scene.add(dustTwo);
+        // scene.add(dustThree);
+        
         const near = 5;
         const far = 18;
         const color = '#1F2939';

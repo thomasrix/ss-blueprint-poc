@@ -1,5 +1,7 @@
 # Dependency directories
 node_modules
+# Development directories
+grafik
 .cache
 # Files
 npm_debug.log
