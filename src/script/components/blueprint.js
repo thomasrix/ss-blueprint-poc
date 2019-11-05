@@ -90,7 +90,7 @@ export default class Blueprint {
 
         console.log(this.camera.position);
 
-        this.controls = new Controls(this.container, this.camera);
+        this.controls = new Controls(this);
         // Setup camera controller
         
         // const controls = new THREE.OrbitControls(this.camera, this.canvas);
